@@ -1,12 +1,29 @@
 .page-wrapper {
     min-height: 100vh;
+    position: relative;
+
+}
+
+.background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.page-content {
+    position: relative;
+    z-index: 1;
 }
 
 .startpage-bg {
     background-image: url('/images/start_background.jpg');
+    filter: brightness(0.2);
 }
 
 .legalnotice-bg {

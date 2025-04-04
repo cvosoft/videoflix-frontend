@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 96px;
+}
+
+
+button {
+    width: 99px;
+    height: 48px;
+    border: unset;
+    border-radius: 40px;
+    background-color: #2E3EDF;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+
+img {
+    width: 200px;
+    height: 32px;
+}

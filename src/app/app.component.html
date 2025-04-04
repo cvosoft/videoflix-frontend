@@ -1,9 +1,13 @@
-<div class="page-wrapper" [ngClass]="backgroundClass">
+<div class="page-wrapper">
 
-    <app-header></app-header>
+    <div class="background-layer" [ngClass]="backgroundClass"></div>
 
-    <router-outlet />
+    <div class="page-content">
+        <app-header></app-header>
 
-    <app-footer></app-footer>
+        <router-outlet />
+
+        <app-footer></app-footer>
+    </div>
 
 </div>
