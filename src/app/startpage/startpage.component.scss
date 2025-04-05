@@ -1,0 +1,40 @@
+section {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 32px;
+}
+
+input {
+    border: unset;
+    width: 518px;
+    height: 48px;
+    padding: 12px 24px;
+    border: 1px solid white;
+    border-radius: 40px;
+}
+
+.formClass {
+    display: flex;
+    gap: 16px;
+}
+
+h2,
+h3 {
+    color: white;
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 400;
+}

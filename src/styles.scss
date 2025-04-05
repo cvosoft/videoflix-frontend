@@ -13,4 +13,18 @@
 
 * {
     box-sizing: border-box;
-  }
+}
+
+
+button {
+    //width: 99px;
+    height: 48px;
+    border: unset;
+    border-radius: 40px;
+    background-color: #2E3EDF;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 12px 24px;
+    cursor: pointer;
+}
