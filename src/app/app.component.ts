@@ -27,6 +27,10 @@ export class AppComponent {
           this.backgroundClass = 'legalnotice-bg';
         } else if (url.startsWith('/imprint')) {
           this.backgroundClass = 'imprint-bg';
+        } else if (url.startsWith('/login')) {
+          this.backgroundClass = 'login-bg';
+        } else if (url.startsWith('/register')) {
+          this.backgroundClass = 'register-bg';
         } else {
           this.backgroundClass = '';
         }

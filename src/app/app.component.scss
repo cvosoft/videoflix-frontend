@@ -23,7 +23,17 @@
 }
 
 .startpage-bg {
-    background-image: url('/images/start_background.jpg');
+    background-image: url('/images/praying.jpg');
+    filter: brightness(0.2);
+}
+
+.login-bg {
+    background-image: url('/images/worship.jpg');
+    filter: brightness(0.2);
+}
+
+.register-bg {
+    background-image: url('/images/bible.jpg');
     filter: brightness(0.2);
 }
 
