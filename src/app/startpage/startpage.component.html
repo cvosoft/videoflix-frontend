@@ -5,12 +5,11 @@
         Gib Deine Email-Adresse an um ein Abo zu erstellen oder zu erneuern.
     </h3>
 
-    <form>
+    <form (ngSubmit)="onSubmit()">
         <div class="formClass">
-            <input type="email" placeholder="Email Address">
-            <button>Anmelden &gt;</button>
+            <input type="email" [(ngModel)]="email" name="email" placeholder="Email Address" required>
+            <button type="submit">Anmelden &gt;</button>
         </div>
     </form>
-
 
 </section>
