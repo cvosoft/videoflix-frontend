@@ -2,10 +2,11 @@
 
     <div class="container">
         <h2>Anmelden</h2>
-        <form>
-            <input type="email" [value]="email" placeholder="Email Address">
-            <input type="password" placeholder="Enter a Password">
-            <input type="password" placeholder="Confirm Password">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <input type="email" name="email" [(ngModel)]="email" placeholder="Email Address" required>
+            <input type="password" name="password" [(ngModel)]="password" placeholder="Enter a Password" required>
+            <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirm Password"
+                required>
             <button type="submit">Get started</button>
         </form>
     </div>
