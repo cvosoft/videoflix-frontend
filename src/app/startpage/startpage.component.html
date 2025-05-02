@@ -5,11 +5,21 @@
         Gib Deine Email-Adresse an um ein Abo zu erstellen oder zu erneuern.
     </h3>
 
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" #formRef="ngForm">
         <div class="formClass">
-            <input type="email" [(ngModel)]="email" name="email" placeholder="Email Address" required>
-            <button type="submit">Anmelden &gt;</button>
+            <input type="email" [(ngModel)]="email" #emailRef="ngModel" name="email" placeholder="Email Address"
+                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
+
+            <button type="submit" [disabled]="(!formRef.valid)">Anmelden &gt;</button>
         </div>
+
+
+        <div class="error-message">@if (!emailRef.valid && emailRef.touched) {Gültige Emailadresse angeben!}
+        </div>
+
+
+
     </form>
+
 
 </section>

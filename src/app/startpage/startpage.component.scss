@@ -27,6 +27,12 @@ input {
     }
 }
 
+.error-message {
+    color: red;
+    margin-top: 10px;
+    height: 24px;
+}
+
 .formClass {
     display: flex;
     gap: 16px;
@@ -45,4 +51,10 @@ h2 {
 h3 {
     font-size: 18px;
     font-weight: 400;
+}
+
+
+button[disabled] {
+    opacity: 0.5;
+    cursor: default;
 }
