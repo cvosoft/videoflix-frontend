@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -7,6 +8,11 @@ import { RouterModule } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
 
+export class HeaderComponent {
+  constructor(public router: Router) { }
+
+  isLoginPage(): boolean {
+    return this.router.url === '/login';
+  }
 }

@@ -3,11 +3,28 @@
     <div class="container">
         <h2>Anmelden</h2>
         <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-            <input type="email" name="email" [(ngModel)]="email" placeholder="Email Address" required>
+            <!-- EMAIL -->
+            <input
+            type="email"
+            name="email"
+            [(ngModel)]="email"
+            #emailRef="ngModel"
+            placeholder="Email Address"
+            required
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            />
+
             <input type="password" name="password" [(ngModel)]="password" placeholder="Enter a Password" required>
             <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirm Password"
-                required>
-            <button type="submit">Get started</button>
+                required #confirm="ngModel" [pattern]="password">
+
+            <div class="error-message">
+                @if (confirm.invalid && confirm.touched) {Passwörter stimmen nicht überein<br>}
+                @if (emailRef.invalid && emailRef.touched) {Emailadresse ungültig}
+            </div>
+
+            <button type="submit" [disabled]="(!form.valid)">Anmelden</button>
+
         </form>
     </div>
 

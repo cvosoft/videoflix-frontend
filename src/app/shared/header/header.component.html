@@ -1,4 +1,11 @@
 <div class="header">
     <a routerLink="/"><img src="logo2.png"></a>
+
+    @if (!isLoginPage()) {
     <a routerLink="/login"><button>Log in</button></a>
+    }
+
+
+
+
 </div>

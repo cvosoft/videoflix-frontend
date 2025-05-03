@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { NotificationService } from '../services/notification.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -16,7 +17,7 @@ export class SignUpComponent {
   password: string = '';
   confirmPassword: string = '';
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private notificationService: NotificationService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient, private notificationService: NotificationService) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -44,7 +45,8 @@ export class SignUpComponent {
         next: response => {
           //console.log('Registrierung erfolgreich:', response);
           this.notificationService.showSuccess("Registrierung erfolgreich. Bitte Emails prüfen.");
-          // auf Startseite wechseln
+          // auf Loginseite wechseln
+          this.router.navigate(['/login']);
 
         },
         error: err => {
