@@ -7,17 +7,88 @@
 
 
 * {
-    font-family: 'dmsans'
-}
-
-
-* {
+    font-family: 'dmsans';
     box-sizing: border-box;
 }
 
 
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+section {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 32px;
+
+
+
+    h2,
+    h3,
+    span {
+        color: white;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 48px;
+        font-weight: 700;
+    }
+
+    h3 {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+
+}
+
+.container {
+    display: flex;
+    width: 520px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1B1B22D9;
+    padding: 43px 56px;
+    gap: 32px;
+    border-radius: 48px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+
+        input {
+            width: 408px;
+            border: unset;
+            height: 48px;
+            padding: 12px 24px;
+            border-radius: 12px;
+            border: 1px solid #2E3EDF;
+            background-color: #1C1A20CC;
+            color: #D3D3D3;
+            font-size: 18px;
+            font-weight: 400;
+
+            &::placeholder {
+                color: white;
+            }
+        }
+    }
+}
+
 button {
-    //width: 99px;
+    //width: 408px;
     height: 48px;
     border: unset;
     border-radius: 40px;
@@ -27,4 +98,17 @@ button {
     font-weight: 700;
     padding: 12px 24px;
     cursor: pointer;
+}
+
+button[disabled] {
+    opacity: 0.5;
+    cursor: default;
+}
+
+
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+    height: 24px;
 }

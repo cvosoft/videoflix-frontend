@@ -32,8 +32,10 @@ export class AppComponent {
           this.backgroundClass = 'login-bg';
         } else if (url.startsWith('/register')) {
           this.backgroundClass = 'register-bg';
+        } else if (url.startsWith('/forgot-pw')) {
+          this.backgroundClass = 'forgotpw-bg';          
         } else {
-          this.backgroundClass = '';
+          this.backgroundClass = 'startpage-bg';
         }
       });
 
