@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { NotificationService } from '../services/notification.service';
 import { Router } from '@angular/router';
+import { environment } from '../../../src/environments/environment';
 
 @Component({
   selector: 'app-sign-up',
@@ -41,7 +42,7 @@ export class SignUpComponent {
 
       //console.log('Formulardaten:', form.value);
 
-      this.http.post('http://127.0.0.1:8000/api/registration/', payload).subscribe({
+      this.http.post(`${environment.apiUrl}/registration/`, payload).subscribe({
         next: response => {
           //console.log('Registrierung erfolgreich:', response);
           this.notificationService.showSuccess("Registrierung erfolgreich. Bitte Emails prüfen.");

@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { NotificationService } from '../services/notification.service';
 import { Router } from '@angular/router';
-
+import { environment } from '../../../src/environments/environment';
 
 
 @Component({
@@ -25,7 +25,7 @@ export class ForgotPasswordComponent {
       email: this.email,
     };
 
-    this.http.post('http://127.0.0.1:8000/api/password/reset', payload).subscribe({
+    this.http.post(`${environment.apiUrl}/password/reset`, payload).subscribe({
       next: response => {
         //console.log("gesendet:", this.email);
         this.notificationService.showSuccess("Die E-Mail zum Zurücksetzen des Passwortes wurde verschickt");

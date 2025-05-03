@@ -10,7 +10,7 @@ import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 
 export const routes: Routes = [
     { path: '', component: StartpageComponent },
-    { path: 'reset-pw', component: ResetPasswordComponent },
+    { path: 'reset-password/:uid/:token', component: ResetPasswordComponent },
     { path: 'forgot-pw', component: ForgotPasswordComponent },
     { path: 'login', component: LogInComponent },
     { path: 'register', component: SignUpComponent },
