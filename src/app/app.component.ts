@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from "./shared/footer/footer.component";
 import { HeaderComponent } from "./shared/header/header.component";
+import { ToastComponent } from "./shared/toast/toast.component";
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FooterComponent, HeaderComponent, CommonModule],
+  imports: [RouterOutlet, FooterComponent, HeaderComponent, CommonModule, ToastComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

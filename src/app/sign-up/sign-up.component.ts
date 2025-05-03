@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -15,7 +16,7 @@ export class SignUpComponent {
   password: string = '';
   confirmPassword: string = '';
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private notificationService: NotificationService) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -37,11 +38,31 @@ export class SignUpComponent {
         password2: this.confirmPassword
       };
 
-      console.log('Formulardaten:', form.value);
+      //console.log('Formulardaten:', form.value);
 
       this.http.post('http://127.0.0.1:8000/api/registration/', payload).subscribe({
-        next: response => console.log('Registrierung erfolgreich:', response),
-        error: err => console.error('Fehler:', err.error)
+        next: response => {
+          //console.log('Registrierung erfolgreich:', response);
+          this.notificationService.showSuccess("Registrierung erfolgreich. Bitte Emails prüfen.");
+          // auf Startseite wechseln
+
+        },
+        error: err => {
+          //console.error('Fehler:', err.error);
+          const errors = err.error;
+          let message = 'Registrierung fehlgeschlagen';
+
+          if (typeof errors === 'object') {
+            // Alle Arrays von Fehlermeldungen zusammenführen
+            const messages = Object.values(errors)
+              .flat()                     // alle Arrays zusammenfassen
+              .join('\n');                // in einzelne Zeilen trennen
+
+            message = messages || message;
+          }
+
+          this.notificationService.showError(message);
+        }
       });
 
 
