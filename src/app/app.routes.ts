@@ -7,6 +7,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
+import { VideoOfferComponent } from './video-offer/video-offer.component';
 
 export const routes: Routes = [
     { path: '', component: StartpageComponent },
@@ -16,5 +17,6 @@ export const routes: Routes = [
     { path: 'register', component: SignUpComponent },
     { path: 'legalnotice', component: LegalNoticeComponent },
     { path: 'imprint', component: ImprintComponent },
-    { path: 'confirm-email/:key', component: ConfirmEmailComponent }
+    { path: 'confirm-email/:key', component: ConfirmEmailComponent },
+    { path: 'videos', component: VideoOfferComponent }
 ];
