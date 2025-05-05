@@ -25,9 +25,14 @@ export class ForgotPasswordComponent {
       email: this.email,
     };
 
-    this.http.post(`${environment.apiUrl}/password/reset`, payload).subscribe({
+    this.http.post(`${environment.apiUrl}/password/reset/`, payload).subscribe({
       next: response => {
         //console.log("gesendet:", this.email);
+        this.notificationService.showSuccess("Die E-Mail zum Zurücksetzen des Passwortes wurde verschickt");
+        // auf Loginseite wechseln
+        this.router.navigate(['/login']);
+      },
+      error: err => {
         this.notificationService.showSuccess("Die E-Mail zum Zurücksetzen des Passwortes wurde verschickt");
         // auf Loginseite wechseln
         this.router.navigate(['/login']);

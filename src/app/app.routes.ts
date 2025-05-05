@@ -17,6 +17,6 @@ export const routes: Routes = [
     { path: 'register', component: SignUpComponent },
     { path: 'legalnotice', component: LegalNoticeComponent },
     { path: 'imprint', component: ImprintComponent },
-    { path: 'confirm-email/:key', component: ConfirmEmailComponent },
+    { path: 'confirm-email', component: ConfirmEmailComponent },
     { path: 'videos', component: VideoOfferComponent }
 ];

@@ -3,9 +3,13 @@
         <h2>Log In</h2>
 
         <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-            <input type="email" name="email" [(ngModel)]="email" placeholder="Email Address">
-            <input type="password" name="password" [(ngModel)]="password" placeholder="Password">
-            <button type="submit">Log In</button>
+            <input type="email" name="email" [(ngModel)]="email" placeholder="Email Address" required
+                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+            <input type="password" name="password" [(ngModel)]="password" placeholder="Password" required>
+            <div style="display: flex; gap: 20px">
+                <button type="submit" [disabled]="(!form.valid)">Log In</button>
+                <button type="button" (click)="guestLogin()">Guest</button>
+            </div>
         </form>
 
         <a routerLink="/forgot-pw">Forgot password?</a>

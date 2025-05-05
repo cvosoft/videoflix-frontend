@@ -58,9 +58,13 @@ export class LogInComponent {
       });
 
 
-    } else {
+    } else { // form invalid
       console.log('Fehler');
     }
+  }
+
+  guestLogin() {
+    this.router.navigate(['/videos']);
   }
 
 }
