@@ -2,9 +2,9 @@
     <div class="container">
         <h2>Log In</h2>
 
-        <form>
-            <input type="email" placeholder="Email Address">
-            <input type="password" placeholder="Password">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <input type="email" name="email" [(ngModel)]="email" placeholder="Email Address">
+            <input type="password" name="password" [(ngModel)]="password" placeholder="Password">
             <button type="submit">Log In</button>
         </form>
 

@@ -34,15 +34,13 @@ export class SignUpComponent {
       }
 
       const payload = {
-        username: this.email,
         email: this.email,
-        password1: this.password,
-        password2: this.confirmPassword
+        password: this.password,
       };
 
       //console.log('Formulardaten:', form.value);
 
-      this.http.post(`${environment.apiUrl}/registration/`, payload).subscribe({
+      this.http.post(`${environment.apiUrl}/signup/`, payload).subscribe({
         next: response => {
           //console.log('Registrierung erfolgreich:', response);
           this.notificationService.showSuccess("Registrierung erfolgreich. Bitte Emails prüfen.");
