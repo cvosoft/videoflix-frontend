@@ -1,0 +1,28 @@
+/* serien-übersicht.component.css */
+.serie-block {
+    margin-bottom: 2rem;
+}
+
+.predigten-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.predigt-item {
+    width: 160px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+}
