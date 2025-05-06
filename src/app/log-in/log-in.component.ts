@@ -44,14 +44,18 @@ export class LogInComponent {
           const errors = err.error;
           let message = 'Login fehlgeschlagen';
 
-          if (typeof errors === 'object') {
-            // Alle Arrays von Fehlermeldungen zusammenführen
-            const messages = Object.values(errors)
-              .flat()                     // alle Arrays zusammenfassen
-              .join('\n');                // in einzelne Zeilen trennen
-
-            message = messages || message;
+          if (err.status >= 500) {
+            message = 'Serverfehler. Bitte versuchen Sie es später erneut.';
           }
+
+          // if (typeof errors === 'object') {
+          //   // Alle Arrays von Fehlermeldungen zusammenführen
+          //   const messages = Object.values(errors)
+          //     .flat()                     // alle Arrays zusammenfassen
+          //     .join('\n');                // in einzelne Zeilen trennen
+
+          //   message = messages || message;
+          // }
 
           this.notificationService.showError(message);
         }
