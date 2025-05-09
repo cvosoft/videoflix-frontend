@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../../auth.service'
+
 
 @Component({
   selector: 'app-header',
@@ -10,9 +12,19 @@ import { RouterModule } from '@angular/router';
 })
 
 export class HeaderComponent {
-  constructor(public router: Router) { }
+  constructor(public router: Router, public authService: AuthService) { }
 
   isLoginPage(): boolean {
     return this.router.url === '/login';
   }
+
+  isVideOfferPage(): boolean {
+    return this.router.url === '/videos';
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
+
 }

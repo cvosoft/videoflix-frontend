@@ -1,8 +1,12 @@
 <div class="header">
     <a routerLink="/"><img src="logo2.png"></a>
 
-    @if (!isLoginPage()) {
+    @if (!isLoginPage() && !isVideOfferPage()) {
     <a routerLink="/login"><button>Log in</button></a>
+    }
+
+    @if (isVideOfferPage()) {
+    <button (click)="logout()">Log out</button>
     }
 
 
