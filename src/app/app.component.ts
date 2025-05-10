@@ -35,7 +35,7 @@ export class AppComponent {
         } else if (url.startsWith('/forgot-pw')) {
           this.backgroundClass = 'forgotpw-bg';          
         } else {
-          this.backgroundClass = 'startpage-bg';
+          this.backgroundClass = 'blackNone';
         }
       });
 

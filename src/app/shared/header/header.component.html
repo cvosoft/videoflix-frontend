@@ -5,7 +5,7 @@
     <a routerLink="/login"><button>Log in</button></a>
     }
 
-    @if (isVideOfferPage()) {
+    @if (isVideOfferPage() && authService.isAuthenticated()) {
     <button (click)="logout()">Log out</button>
     }
 

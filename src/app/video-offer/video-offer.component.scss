@@ -1,28 +1,23 @@
-/* serien-übersicht.component.css */
-.serie-block {
-    margin-bottom: 2rem;
-}
+.series-list {
 
-.predigten-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
+    .series-block {
 
-.predigt-item {
-    width: 160px;
-    cursor: pointer;
-    text-align: center;
-}
+        h4 {
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+        }
 
-.thumbnail {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease;
-}
+        .thumb {
+            height: 120px;
+            width: auto;
+            cursor: pointer;
+        }
 
-.thumbnail:hover {
-    transform: scale(1.05);
+        img {
+            height: 100%;
+        }
+    }
+
+
 }

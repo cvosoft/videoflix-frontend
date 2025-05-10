@@ -1,6 +1,34 @@
 <section>
 
-    <!-- serien-übersicht.component.html -->
+    <div class="preview">
+
+
+    </div>
+
+    <div class="series-list">
+
+        @for (serie of serien; track serie) {
+        <div class="series-block">
+            <h4> {{ serie.title }}</h4>
+
+            @for (predigt of serie.predigten; track predigt) {
+
+            <div class="thumb" (click)="onFolgeClick(predigt.video_file)">
+                <img [src]="predigt.thumbnail_file" alt="">
+            </div>
+
+            }
+
+
+
+
+        </div>
+        }
+
+    </div>
+
+
+    <!-- serien-übersicht.component.html
     <div *ngFor="let serie of serien" class="serie-block">
         <h2>{{ serie.title }}</h2>
         <p>{{ serie.description }}</p>
@@ -12,7 +40,7 @@
                 <p>{{ predigt.title }}</p>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 </section>

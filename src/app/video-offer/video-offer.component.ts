@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   selector: 'app-serien-übersicht',
   templateUrl: './video-offer.component.html',
+  styleUrls: ['./video-offer.component.scss'], // <– Hier hinzufügen!
 })
 export class VideoOfferComponent implements OnInit {
   serien: Serie[] = [];
@@ -17,6 +18,7 @@ export class VideoOfferComponent implements OnInit {
   ngOnInit(): void {
     this.serieService.getSerien().subscribe((data) => {
       this.serien = data;
+      //console.log(this.serien)
     });
   }
 

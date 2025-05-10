@@ -2,15 +2,15 @@
 export interface Predigt {
     id: number;
     title: string;
-    video_url: string;
+    video_file: string;
     date: string;
-    thumbnail: string;
+    thumbnail_file: string;
   }
   
   export interface Serie {
     id: number;
     title: string;
     description: string;
-    thumbnail: string;
+    thumbnail_file: string;
     predigten: Predigt[];
   }
