@@ -8,6 +8,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 import { VideoOfferComponent } from './video-offer/video-offer.component';
+import { VideoDetailComponent } from './video-detail/video-detail.component';
 import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
@@ -19,5 +20,7 @@ export const routes: Routes = [
     { path: 'legalnotice', component: LegalNoticeComponent },
     { path: 'imprint', component: ImprintComponent },
     { path: 'confirm-email', component: ConfirmEmailComponent },
-    { path: 'videos', component: VideoOfferComponent, canActivate: [authGuard] }
+    { path: 'videos', component: VideoOfferComponent, canActivate: [authGuard] },
+    // 🔽 Einzelne Predigt (Detailansicht mit Player)
+    { path: 'predigt/:idSlug', component: VideoDetailComponent, canActivate: [authGuard] },
 ];

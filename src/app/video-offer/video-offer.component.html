@@ -13,7 +13,7 @@
 
             @for (predigt of serie.predigten; track predigt) {
 
-            <div class="thumb" (click)="onFolgeClick(predigt.video_file)">
+            <div class="thumb" (click)="onFolgeClick(predigt)">
                 <img [src]="predigt.thumbnail_file" alt="">
             </div>
 
