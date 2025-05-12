@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../auth.service'
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +12,11 @@ import { AuthService } from '../../auth.service'
 })
 
 export class HeaderComponent {
-  constructor(public router: Router, public authService: AuthService) { }
+  constructor(private location: Location, public router: Router, public authService: AuthService) { }
+
+  goBack(): void {
+    this.location.back();
+  }
 
   isLoginPage(): boolean {
     return this.router.url === '/login';
@@ -20,6 +24,10 @@ export class HeaderComponent {
 
   isVideOfferPage(): boolean {
     return this.router.url === '/videos';
+  }
+
+  isImprintOrLegalNotice(): boolean {
+    return this.router.url === '/imprint' || this.router.url === '/legalnotice';
   }
 
   logout(): void {

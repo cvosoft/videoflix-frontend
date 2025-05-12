@@ -17,6 +17,11 @@ export class AppComponent {
   title = 'videoflix';
   backgroundClass = "";
 
+  shouldShowFooter(): boolean {
+    const current = this.router.url;
+    return !current.includes('legalnotice') && !current.includes('imprint');
+  }
+
   constructor(private router: Router) {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
@@ -33,7 +38,7 @@ export class AppComponent {
         } else if (url.startsWith('/register')) {
           this.backgroundClass = 'register-bg';
         } else if (url.startsWith('/forgot-pw')) {
-          this.backgroundClass = 'forgotpw-bg';          
+          this.backgroundClass = 'forgotpw-bg';
         } else {
           this.backgroundClass = 'blackNone';
         }

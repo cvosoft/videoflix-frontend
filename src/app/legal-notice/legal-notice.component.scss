@@ -1,0 +1,31 @@
+.privacy {
+    background-color: rgba(0, 0, 0, 0.85); // dunkler Layer, besser lesbar
+    color: white;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 3rem auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+
+    h2,
+    h3,
+    h4 {
+        color: white;
+        margin-top: 2rem;
+    }
+
+    address {
+        margin: 1rem 0;
+        font-style: normal;
+    }
+
+    a {
+        color: #9ddcff;
+        text-decoration: underline;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}

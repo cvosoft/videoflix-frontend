@@ -1,7 +1,7 @@
 <div class="header">
     <a routerLink="/"><img src="logo2.png"></a>
 
-    @if (!isLoginPage() && !isVideOfferPage()) {
+    @if (!isLoginPage() && !isVideOfferPage() && !isImprintOrLegalNotice()) {
     <a routerLink="/login"><button>Log in</button></a>
     }
 
@@ -9,7 +9,8 @@
     <button (click)="logout()">Log out</button>
     }
 
-
-
+    @if (isImprintOrLegalNotice()) {
+    <button (click)="goBack()">Back</button>
+    }
 
 </div>

@@ -1,4 +1,5 @@
+@if (predigt) {
 <h2>{{ predigt.title }}</h2>
 <p>{{ predigt.date }}</p>
-
 <app-video-player [src]="predigt.video_file"></app-video-player>
+}

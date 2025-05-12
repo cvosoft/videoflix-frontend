@@ -11,6 +11,11 @@
     box-sizing: border-box;
 }
 
+app-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
 a {
     color: white;
@@ -19,7 +24,7 @@ a {
     font-weight: 500;
 }
 
-section {
+centered-section {
     position: absolute;
     display: flex;
     flex-direction: column;
