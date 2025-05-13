@@ -1,16 +1,16 @@
-<div class="header">
+<header>
     <a routerLink="/"><img src="logo2.png"></a>
 
-    @if (!isLoginPage() && !isVideOfferPage() && !isImprintOrLegalNotice()) {
-    <a routerLink="/login"><button>Log in</button></a>
-    }
-
-    @if (isVideOfferPage() && authService.isAuthenticated()) {
+    @if ((isVideOfferPage() || isPredigtDetailPage()) && authService.isAuthenticated()) {
     <button (click)="logout()">Log out</button>
     }
 
-    @if (isImprintOrLegalNotice()) {
+    @else if (!isLoginPage() && !isVideOfferPage() && !isImprintOrLegalNotice()) {
+    <a routerLink="/login"><button>Log in</button></a>
+    }
+
+    @else if (isImprintOrLegalNotice()) {
     <button (click)="goBack()">Back</button>
     }
 
-</div>
+</header>

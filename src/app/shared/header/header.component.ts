@@ -18,6 +18,10 @@ export class HeaderComponent {
     this.location.back();
   }
 
+  isPredigtDetailPage(): boolean {
+    return this.router.url.startsWith('/predigt/');
+  }
+
   isLoginPage(): boolean {
     return this.router.url === '/login';
   }

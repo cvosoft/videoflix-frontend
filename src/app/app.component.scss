@@ -16,8 +16,15 @@
     z-index: 0;
 }
 
+app-header {
+    position: sticky;
+    top: 0;
+}
+
 .page-content {
+    display: flex;
     position: relative;
+    flex-direction: column;
     z-index: 1;
     min-height: 100vh;
 }

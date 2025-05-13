@@ -1,12 +1,25 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+}
+
 .privacy {
+    display: flex;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.85); // dunkler Layer, besser lesbar
     color: white;
     padding: 2rem;
     max-width: 900px;
-    margin: 3rem auto;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
+    border: 3px solid white;
+    height: 500px;
+    overflow-y: scroll;
+
 
     h2,
     h3,

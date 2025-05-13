@@ -1,0 +1,12 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: .5;
+
+}
+
+.error-message {
+    align-self: flex-start;
+    margin-top: -5px;
+}

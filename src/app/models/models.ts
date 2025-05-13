@@ -5,6 +5,7 @@ export interface Predigt {
     video_file: string;
     date: string;
     thumbnail_file: string;
+    series_title: string;
   }
   
   export interface Serie {
