@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+button {
+    //width: 408px;
+    height: 48px;
+    border: unset;
+    border-radius: 40px;
+    background-color: $color-primary;
+    color: $color-secondary;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+button[disabled] {
+    opacity: 0.5;
+    cursor: default;
+}

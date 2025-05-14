@@ -34,8 +34,7 @@
             "styles": [
               "node_modules/video.js/dist/video-js.css",
               "node_modules/plyr/dist/plyr.css",
-              "src/styles.scss",
-              "src/reset.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -94,8 +93,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss",
-              "src/reset.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           }

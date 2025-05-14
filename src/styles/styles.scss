@@ -1,16 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
-
-@font-face {
-    font-family: 'dmsans';
-    src: url('../public/fonts/DMSans-VariableFont.ttf') format('truetype');
-}
+@use 'reset.scss';
+@use 'variables.scss';
+@use 'typography.scss';
+@use 'buttons.scss';
+@use 'fonts.scss';
 
 
 * {
-    font-family: 'dmsans';
     box-sizing: border-box;
 }
-
 
 
 a {
@@ -28,16 +25,6 @@ section {
     span {
         color: white;
         text-align: center;
-    }
-
-    h2 {
-        font-size: 48px;
-        font-weight: 700;
-    }
-
-    h3 {
-        font-size: 18px;
-        font-weight: 400;
     }
 
 
@@ -78,23 +65,6 @@ section {
     }
 }
 
-button {
-    //width: 408px;
-    height: 48px;
-    border: unset;
-    border-radius: 40px;
-    background-color: #2E3EDF;
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
-    padding: 12px 24px;
-    cursor: pointer;
-}
-
-button[disabled] {
-    opacity: 0.5;
-    cursor: default;
-}
 
 
 
@@ -102,8 +72,4 @@ button[disabled] {
     color: red;
     margin-top: 5px;
     height: 24px;
-}
-
-.purple {
-    color: #2E3EDF;
 }

@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+body {
+  font-family: $font-base;
+  color: $color-secondary;
+}
+
+
+h1,
+.h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+h2,
+.h2 {
+    font-size: 18px;
+    font-weight: 400;
+}
