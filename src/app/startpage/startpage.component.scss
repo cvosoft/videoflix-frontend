@@ -1,18 +1,13 @@
+@use '../../styles/mixins' as *;
+
 :host {
-    flex: 1; // besser als 100vh
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    //height: 100vh;
+    @include flex-center;
+    flex: 1;
 }
 
 section {
-    //position: absolute;
-    display: flex;
+    @include flex-center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
 }
 
 input {
