@@ -1,15 +1,21 @@
+:host {
+  position: sticky;
+  top: 0;
+}
+
 header {
-    display: flex;
-    position: sticky;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px 96px;
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 96px;
 }
 
 
 img {
-    //width: 200px;
-    height: 32px;
+  //width: 200px;
+  height: 32px;
+  cursor: pointer;
 }
 
 .placeholder-button {

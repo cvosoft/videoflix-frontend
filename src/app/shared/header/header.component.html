@@ -2,7 +2,7 @@
     <a routerLink="/"><img src="logo2.png"></a>
 
     @if ((isVideOfferPage() || isPredigtDetailPage()) && authService.isAuthenticated()) {
-    <button (click)="logout()">Log out</button>
+    <button (click)="logout()"><img src="./images/icons/logout.svg">Log&nbsp;out</button>
     }
 
     @else if (!isLoginPage() && !isVideOfferPage() && !isImprintOrLegalNotice()) {
@@ -10,7 +10,7 @@
     }
 
     @else if (isImprintOrLegalNotice()) {
-    <button (click)="goBack()">Back</button>
+    <img (click)="goBack()" src="./images/icons/arrow_back.svg">
     }
 
     @else {
