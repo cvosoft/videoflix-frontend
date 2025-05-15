@@ -1,19 +1,24 @@
-footer {
-     display: flex;
-     justify-content: center;
-     gap: 48px;
-     position: fixed;
-     //left: 0;
-     bottom: 0;
-     padding-bottom: 30px;
-     width: 100%;
-     color: white;
-     text-align: center;
-     font-size: 18px;
-     font-weight: 500;
+:host {
+    display: flex;
+    //position: fixed;
+    //left: 0;
+    bottom: 0;
+}
 
-     a {
-         color: white;
-         text-decoration: none;
-     }
- }
+
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    padding-bottom: 30px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}

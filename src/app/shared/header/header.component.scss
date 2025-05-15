@@ -1,22 +1,27 @@
 :host {
   position: sticky;
   top: 0;
+  z-index: 100; // optional, aber oft nötig bei sticky-Headern
 }
 
 header {
   display: flex;
-  position: sticky;
   align-items: center;
   justify-content: space-between;
   padding: 30px 96px;
 }
 
 
-img {
-  //width: 200px;
+.logo {
   height: 32px;
   cursor: pointer;
 }
+
+.arrow {
+  height: 24px;
+  cursor: pointer;
+}
+
 
 .placeholder-button {
   visibility: hidden;

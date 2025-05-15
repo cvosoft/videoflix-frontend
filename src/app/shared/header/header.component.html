@@ -1,5 +1,5 @@
 <header>
-    <a routerLink="/"><img src="logo2.png"></a>
+    <a routerLink="/"><img src="logo2.png" class="logo"></a>
 
     @if ((isVideOfferPage() || isPredigtDetailPage()) && authService.isAuthenticated()) {
     <button (click)="logout()"><img src="./images/icons/logout.svg">Log&nbsp;out</button>
@@ -10,7 +10,8 @@
     }
 
     @else if (isImprintOrLegalNotice()) {
-    <img (click)="goBack()" src="./images/icons/arrow_back.svg">
+    <img class="arrow" (click)="goBack()" src="./images/icons/arrow_back.svg">
+
     }
 
     @else {
