@@ -1,0 +1,36 @@
+name: Deploy Angular Frontend to Server
+
+on:
+  push:
+    branches:
+      - main  # Passe an, falls du einen anderen Branch nutzt
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install Dependencies and Build Angular App
+      run: |
+        npm ci
+        npm run build --prod
+
+    - name: Deploy via rsync over SSH
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: |
+        echo "$SSH_PRIVATE_KEY" > key.pem
+        chmod 600 key.pem
+
+        rsync -avz -e "ssh -i key.pem -o StrictHostKeyChecking=no" \
+          dist/ hosting151356@hosting151356.a2ebe.netcup.net:/predigtflix.de/httpdocs/
+
+        rm key.pem
