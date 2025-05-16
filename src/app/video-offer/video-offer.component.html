@@ -6,8 +6,10 @@
     <div class="series-list">
 
         @for (serie of serien; track serie) {
+
+        <h4> {{ serie.title }}</h4>
+
         <div class="series-block">
-            <h4> {{ serie.title }}</h4>
 
             @for (predigt of serie.predigten; track predigt) {
 

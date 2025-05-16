@@ -6,7 +6,7 @@
     </h2>
 
     <form (ngSubmit)="onSubmit()" #formRef="ngForm">
-        <div class="formClass">
+        <div class="flex-row">
             <input type="email" [(ngModel)]="email" #emailRef="ngModel" name="email" placeholder="Email Address"
                 pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
 

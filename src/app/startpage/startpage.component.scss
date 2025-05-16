@@ -4,8 +4,6 @@
 section {
     @include flex-center;
     flex-direction: column;
-    //flex: 1;
-    border: 1px solid white
 }
 
 input {
@@ -27,7 +25,8 @@ input {
 
 
 
-.formClass {
+.flex-row {
     display: flex;
+    flex-direction: row;
     gap: 16px;
 }

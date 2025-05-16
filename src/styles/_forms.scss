@@ -1,6 +1,6 @@
  form {
      display: flex;
-     //flex-direction: column;
+     flex-direction: column;
      align-items: center;
      justify-content: center;
      gap: 16px;
@@ -26,11 +26,9 @@
 
  .error-message {
      display: flex;
-     align-items: center;
-     justify-content: center;
+     align-items: flex-start;
+     align-self: flex-start; // immer links
      gap: 5px;
-
      color: red;
-     margin-top: 5px;
-     height: 24px;
+     height: 24px; // fest, damit es nicht ruckelt
  }
