@@ -23,13 +23,13 @@ jobs:
         npm ci
         npm run build --prod
 
-    - name: Deploy via rsync over SSH
+    - name: Deploy via SCP over SSH
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
         echo "$SSH_PRIVATE_KEY" > key.pem
         chmod 600 key.pem
 
-        scp -i key.pem -o StrictHostKeyChecking=no -r dist/* hosting151356@hosting151356.a2ebe.netcup.net:/predigtflix.de/httpdocs/
+        scp -i key.pem -o StrictHostKeyChecking=no -r dist/videoflix/browser/* hosting151356@hosting151356.a2ebe.netcup.net:/predigtflix.de/httpdocs/
 
         rm key.pem
