@@ -21,7 +21,7 @@ jobs:
     - name: Install Dependencies and Build Angular App
       run: |
         npm ci
-        npm run build --prod
+        npm run build --configuration=production
 
     - name: Deploy via SCP over SSH
       env:
