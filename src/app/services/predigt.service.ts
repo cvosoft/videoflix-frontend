@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Predigt } from '../models/models';  // ← dein Interface importieren
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PredigtService {
-  private apiUrl = 'http://localhost:8000/api/predigten/';  // oder dein tatsächlicher API-Endpunkt
+  private apiUrl = `${environment.apiUrl}api/serien/`;  // oder dein tatsächlicher API-Endpunkt
 
   constructor(private http: HttpClient) { }
 
