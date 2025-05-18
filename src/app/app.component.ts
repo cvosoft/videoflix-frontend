@@ -6,6 +6,7 @@ import { ToastComponent } from "./shared/toast/toast.component";
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -17,12 +18,14 @@ export class AppComponent {
   title = 'videoflix';
   backgroundClass = "";
 
+
   shouldShowFooter(): boolean {
     const current = this.router.url;
     return !current.includes('legalnotice') && !current.includes('imprint');
   }
 
   constructor(private router: Router) {
+    console.log('Aktuelles Environment:', environment);
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
