@@ -3,7 +3,7 @@ name: Deploy Angular Frontend to Server
 on:
   push:
     branches:
-      - main  # Passe an, falls du einen anderen Branch nutzt
+      - main
 
 jobs:
   deploy:

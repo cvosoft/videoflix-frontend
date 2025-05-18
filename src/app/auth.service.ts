@@ -9,7 +9,8 @@ export class AuthService {
 
   loginAsGuest(): void {
     // Beispiel: Gast-Token setzen
-    localStorage.setItem('token', 'e25e672152907ca5ece1f495e0ecaab5e34cdd2b');
+    //localStorage.setItem('token', 'e25e672152907ca5ece1f495e0ecaab5e34cdd2b');
+    localStorage.setItem('token', 'b0fd9b64407f3ca744975e6b8991e6aed7fb06f9');//	gast@predigtflix.de
   }
 
   isAuthenticated(): boolean {
