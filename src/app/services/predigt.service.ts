@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class PredigtService {
-  private apiUrl = `${environment.apiUrl}api/predigten/`;  // oder dein tatsächlicher API-Endpunkt
+  private apiUrl = `${environment.apiUrl}api/serien/`;  // oder dein tatsächlicher API-Endpunkt
 
   constructor(private http: HttpClient) { }
 
