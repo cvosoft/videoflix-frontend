@@ -28,7 +28,13 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
 
 
   ngAfterViewInit(): void {
+    if (!this.src) {
+      console.warn('⚠️ Keine Videoquelle übergeben.');
+      return;
+    }
+
     console.log('🎬 Videoquelle:', this.src);
+    
     const video = this.playerRef.nativeElement;
 
 
@@ -81,7 +87,7 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
   changeQuality(event: Event): void {
     const target = event.target as HTMLSelectElement;
     const level = Number(target.value);
-   
+
     if (!isNaN(level) && this.hlsInstance) {
       this.hlsInstance.currentLevel = level;
       this.currentQualityLevel = level;
