@@ -28,6 +28,7 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
 
 
   ngAfterViewInit(): void {
+    console.log('🎬 Videoquelle:', this.src);
     const video = this.playerRef.nativeElement;
 
 
