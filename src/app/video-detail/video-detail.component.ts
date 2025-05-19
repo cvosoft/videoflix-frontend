@@ -24,7 +24,7 @@ export class VideoDetailComponent {
     const id = idSlug?.split('-')[0];
     if (id) {
       this.predigtService.getPredigtById(+id).subscribe((data) => {
-        //this.predigt = data;
+        this.predigt = data;
         console.log('📦 Geladene Predigt:', this.predigt);
       });
     }
