@@ -40,7 +40,7 @@ export class SignUpComponent {
 
       //console.log('Formulardaten:', form.value);
 
-      this.http.post(`${environment.apiUrl}/signup/`, payload).subscribe({
+      this.http.post(`${environment.apiUrl}signup/`, payload).subscribe({
         next: response => {
           //console.log('Registrierung erfolgreich:', response);
           this.notificationService.showSuccess("Registrierung erfolgreich. Bitte Emails prüfen.");
