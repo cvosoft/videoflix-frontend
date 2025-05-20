@@ -25,7 +25,7 @@ export class AppComponent {
   }
 
   constructor(private router: Router) {
-    console.log('Aktuelles Environment:', environment);
+    //console.log('Aktuelles Environment:', environment);
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
