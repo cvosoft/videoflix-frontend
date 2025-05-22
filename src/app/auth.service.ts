@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +10,7 @@ export class AuthService {
 
   loginAsGuest(): void {
     // Beispiel: Gast-Token setzen
-    //localStorage.setItem('token', 'e25e672152907ca5ece1f495e0ecaab5e34cdd2b');
-    localStorage.setItem('token', 'a6116b533b2534ca8299582e030e7b35653daced');//	gast@predigtflix.de
-
+    localStorage.setItem('token', environment.guestToken);
   }
 
   isAuthenticated(): boolean {
