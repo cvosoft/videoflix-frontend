@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../auth.service'
-import { Location } from '@angular/common';
+import { Location, CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -26,7 +26,7 @@ export class HeaderComponent {
     return this.router.url === '/login';
   }
 
-  isVideOfferPage(): boolean {
+  isVideoOfferPage(): boolean {
     return this.router.url === '/videos';
   }
 

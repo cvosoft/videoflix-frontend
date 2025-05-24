@@ -1,17 +1,22 @@
 <header>
-    <a routerLink="/"><img src="logo2.png" class="logo"></a>
+    @if (!isPredigtDetailPage()) {
+    <a routerLink="/"><img src="logo2.png" class="logo" [ngClass]="{ 'logo-small': isVideoOfferPage() }"></a>
+    }
 
-    @if ((isVideOfferPage() || isPredigtDetailPage()) && authService.isAuthenticated()) {
+    @if ((isVideoOfferPage()) && authService.isAuthenticated()) {
     <button (click)="logout()"><img src="./images/icons/logout.svg">Log&nbsp;out</button>
     }
 
-    @else if (!isLoginPage() && !isVideOfferPage() && !isImprintOrLegalNotice()) {
+    @else if (isPredigtDetailPage()) {
+    <img class="arrow" (click)="goBack()" src="./images/icons/arrow_back.svg">
+    }
+
+    @else if (!isLoginPage() && !isVideoOfferPage() && !isImprintOrLegalNotice()) {
     <a routerLink="/login"><button>Log in</button></a>
     }
 
     @else if (isImprintOrLegalNotice()) {
     <img class="arrow" (click)="goBack()" src="./images/icons/arrow_back.svg">
-
     }
 
     @else {

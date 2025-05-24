@@ -17,6 +17,13 @@ header {
   cursor: pointer;
 }
 
+.logo-small {
+  width: 28px;
+  object-fit: cover;
+  object-position: top left;
+}
+
+
 .arrow {
   height: 24px;
   cursor: pointer;
