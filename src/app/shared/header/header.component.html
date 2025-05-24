@@ -1,6 +1,7 @@
 <header>
     @if (!isPredigtDetailPage()) {
-    <a routerLink="/"><img src="logo2.png" class="logo" [ngClass]="{ 'logo-small': isVideoOfferPage() }"></a>
+    <a routerLink="/" [ngClass]="{ 'disabled-link': isVideoOfferPage() }"><img src="logo2.png" class="logo"
+            [ngClass]="{ 'logo-small': isVideoOfferPage() }"></a>
     }
 
     @if ((isVideoOfferPage()) && authService.isAuthenticated()) {

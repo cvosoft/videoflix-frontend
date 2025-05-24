@@ -23,6 +23,11 @@ header {
   object-position: top left;
 }
 
+.disabled-link {
+  pointer-events: none;  /* deaktiviert Klick */
+  cursor: default;       /* Mauszeiger neutral */
+}
+
 
 .arrow {
   height: 24px;
