@@ -1,3 +1,8 @@
+:host {
+    width: 100vw; 
+}
+
+
 section {
     position: static;
     transform: translate(-0%, -0%);
@@ -8,6 +13,12 @@ section {
     gap: 32px;
 }
 
+
+.preview {
+    width: 100%;
+    top: 0;
+    left: 0;
+}
 
 .series-list {
 

@@ -15,4 +15,9 @@ export class PredigtService {
   getPredigtById(id: number): Observable<Predigt> {
     return this.http.get<Predigt>(`${this.apiUrl}${id}/`);
   }
+
+  getPredigten(): Observable<Predigt[]> {
+    return this.http.get<Predigt[]>(this.apiUrl);
+  }
+
 }

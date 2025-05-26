@@ -2,11 +2,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Predigt, Serie } from '../models/models';
 import { SerieService } from '../services/serie.service';
+import { PredigtService } from '../services/predigt.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { VideoPlayerComponent } from '../video-player/video-player.component';
+
 
 @Component({
-  imports: [CommonModule],
+  imports: [CommonModule, VideoPlayerComponent],
   standalone: true,
   selector: 'app-serien-übersicht',
   templateUrl: './video-offer.component.html',
@@ -14,8 +17,11 @@ import { Router } from '@angular/router';
 })
 export class VideoOfferComponent implements OnInit {
   serien: Serie[] = [];
+  predigten: Predigt[] = [];
+  isPreviewPlaying = true;
+  selectedPredigt: Predigt | null = null;
 
-  constructor(private serieService: SerieService, private router: Router) { }
+  constructor(private PredigtService: PredigtService, private serieService: SerieService, private router: Router) { }
 
   slugify(title: string): string {
     return title
@@ -29,12 +35,16 @@ export class VideoOfferComponent implements OnInit {
       this.serien = data;
       //console.log(this.serien)
     });
+    this.PredigtService.getPredigten().subscribe((data) => {
+      this.predigten = data;
+      //console.log(this.predigten[0])
+      this.selectedPredigt = this.predigten[0];
+    });
+
   }
 
   onFolgeClick(predigt: Predigt): void {
-
     const slug = this.slugify(predigt.title);
     this.router.navigate(['/predigt', `${predigt.id}-${slug}`]);
-
   }
 }

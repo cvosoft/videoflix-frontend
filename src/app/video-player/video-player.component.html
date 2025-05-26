@@ -1,25 +1,26 @@
 <div class="video-wrapper">
-  <video #player playsinline controls></video>
+  <video #player playsinline [attr.controls]="showControls ? true : null" [attr.autoplay]="autoplay ? true : null"
+    [attr.muted]="muted ? true : null" [attr.loop]="loop ? true : null"></video>
 
   @if (audioTracks.length > 1) {
-    <div class="language-selector">
-      <label for="audioTrack">Sprache: </label>
-      <select id="audioTrack" [value]="currentAudioTrack" (change)="changeLanguage($event)">
-        @for (track of audioTracks; track track.id) {
-          <option [value]="track.id">{{ track.name }}</option>
-        }
-      </select>
-    </div>
+  <div class="language-selector">
+    <label for="audioTrack">Sprache: </label>
+    <select id="audioTrack" [value]="currentAudioTrack" (change)="changeLanguage($event)">
+      @for (track of audioTracks; track track.id) {
+      <option [value]="track.id">{{ track.name }}</option>
+      }
+    </select>
+  </div>
   }
 
   @if (qualityLevels.length > 1) {
-    <div class="quality-selector">
-      <label for="quality">Qualität: </label>
-      <select id="quality" [value]="currentQualityLevel" (change)="changeQuality($event)">
-        @for (level of qualityLevels; track level.id) {
-          <option [value]="level.id">{{ level.label }}</option>
-        }
-      </select>
-    </div>
+  <div class="quality-selector">
+    <label for="quality">Qualität: </label>
+    <select id="quality" [value]="currentQualityLevel" (change)="changeQuality($event)">
+      @for (level of qualityLevels; track level.id) {
+      <option [value]="level.id">{{ level.label }}</option>
+      }
+    </select>
+  </div>
   }
 </div>
