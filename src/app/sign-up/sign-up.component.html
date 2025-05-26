@@ -1,7 +1,7 @@
 <section>
 
     <div class="container">
-        <h2>Anmelden</h2>
+        <h1 class="h1">Anmelden</h1>
         <form #form="ngForm" (ngSubmit)="onSubmit(form)">
             <!-- EMAIL -->
             <input type="email" name="email" [(ngModel)]="email" #emailRef="ngModel" placeholder="Email Address"
@@ -12,7 +12,11 @@
                 required #confirm="ngModel" [pattern]="password">
 
             <div class="error-message">
-                @if (confirm.invalid && confirm.touched) {<img src="./images/icons/warning.svg">Passwörter stimmen nicht überein<br>}
+                @if (confirm.invalid && confirm.touched|| emailRef.touched && emailRef.invalid)
+                {<div>
+                    <img src="./images/icons/warning.svg">
+                </div>}
+                @if (confirm.invalid && confirm.touched) {Passwörter stimmen nicht überein<br>}
                 @if (emailRef.invalid && emailRef.touched) {Emailadresse ungültig}
             </div>
 
