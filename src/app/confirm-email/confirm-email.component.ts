@@ -32,7 +32,7 @@ export class ConfirmEmailComponent implements OnInit {
     //const key = this.route.snapshot.paramMap.get('key');
     this.code = this.route.snapshot.queryParamMap.get('code') || '';  // "code" aus URL holen
     if (this.code) {
-      this.http.get(`${environment.apiUrl}/signup/verify/`, { params: { code: this.code } })
+      this.http.get(`${environment.apiUrl}api/signup/verify/`, { params: { code: this.code } })
         .subscribe({
           next: () => this.status = '✅ E-Mail wurde erfolgreich bestätigt!',
           error: () => this.status = '❌ Die Bestätigung ist fehlgeschlagen.'

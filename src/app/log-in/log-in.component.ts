@@ -33,7 +33,7 @@ export class LogInComponent {
 
       //console.log('Formulardaten:', form.value);
 
-      this.http.post(`${environment.apiUrl}/login/`, payload).subscribe({
+      this.http.post(`${environment.apiUrl}api/login/`, payload).subscribe({
         next: (response: any) => {
           // token extrakt
           const token = response.token;
