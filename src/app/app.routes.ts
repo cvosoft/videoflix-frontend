@@ -13,7 +13,8 @@ import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
     { path: '', component: StartpageComponent },
-    { path: 'reset-password/:uid/:token', component: ResetPasswordComponent },
+    //{ path: 'reset-password/:uid/:token', component: ResetPasswordComponent },
+    { path: 'reset-password', component: ResetPasswordComponent },
     { path: 'forgot-pw', component: ForgotPasswordComponent },
     { path: 'login', component: LogInComponent },
     { path: 'register', component: SignUpComponent },

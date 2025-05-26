@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../src/environments/environment';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-reset-password',
@@ -13,43 +15,34 @@ export class ResetPasswordComponent {
 
   password: string = '';
   confirmPassword: string = '';
-  uid: string = '';
-  token: string = '';
+  code: string = '';
   errorMessage: string = '';
   successMessage: string = '';
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
+  constructor(private notificationService: NotificationService, private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
-    this.uid = this.route.snapshot.paramMap.get('uid') || '';
-    this.token = this.route.snapshot.paramMap.get('token') || '';
-    console.log('UID:', this.uid);
-    console.log('Token:', this.token);
+    this.code = this.route.snapshot.queryParamMap.get('code') || '';  // "code" aus URL holen
+
   }
 
   onSubmit(form: any) {
 
     const payload = {
-      uid: this.uid,
-      token: this.token,
-      new_password1: this.password,
-      new_password2: this.confirmPassword
+      code: this.code,
+      password: this.password,
     };
 
-    console.log('UID:', this.uid);
-    console.log('Token:', this.token);
-    console.log('Payload:', payload);
 
-    //MeinNeuesicehres123
-
-    this.http.post('http://127.0.0.1:8000/api/password/reset/confirm/', payload)
+    this.http.post(`${environment.apiUrl}api/password/reset/verified/`, payload)
       .subscribe({
         next: (res) => {
-          this.successMessage = 'Passwort erfolgreich zurückgesetzt. Du wirst weitergeleitet...';
+          //this.successMessage = 'Passwort erfolgreich zurückgesetzt. Du wirst weitergeleitet...';
+          this.notificationService.showSuccess('Passwort erfolgreich zurückgesetzt. Du wirst weitergeleitet...');
           setTimeout(() => this.router.navigate(['/login']), 3000);
         },
         error: (err) => {
-          this.errorMessage = 'Fehler beim Zurücksetzen des Passworts. Bitte versuche es erneut.';
+          this.notificationService.showError('Fehler beim Zurücksetzen des Passworts. Bitte versuche es erneut.');
           console.error("Fehler:", err.error);
         }
       });
