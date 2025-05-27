@@ -24,6 +24,11 @@
     justify-content: center; // optional: horizontal zentriert
 }
 
+.normal-flow-content {
+    display: flex;
+}
+
+
 section {
     gap: 32px;
 

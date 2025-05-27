@@ -18,6 +18,10 @@ export class AppComponent {
   title = 'videoflix';
   backgroundClass = "";
 
+  isVideoOfferPage(): boolean {
+    return this.router.url === '/videos';
+  }
+
 
   shouldShowFooter(): boolean {
     const current = this.router.url;

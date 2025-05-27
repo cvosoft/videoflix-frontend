@@ -1,14 +1,15 @@
 <section>
 
-    <div class="preview" (click)="isPreviewPlaying = true">
-
-        @if (selectedPredigt && isPreviewPlaying) {
-        <app-video-player [src]="selectedPredigt.video_file" [startAt]="0" [autoplay]="true" [muted]="true"
-            [loop]="true" [showControls]="false">
-        </app-video-player>
-        }
-
+    <div class="hero">
+        <img [src]="selectedPredigt?.thumbnail_file">
+        <span>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ut commodi cupiditate aliquid! Ratione
+            eveniet molestias unde alias totam esse architecto voluptates saepe minima? Itaque beatae officia animi ipsa
+            voluptas.
+        </span>
+        <button (click)="onPlayClick(selectedPredigt)">Play</button>
     </div>
+
 
     <div class="series-list">
 

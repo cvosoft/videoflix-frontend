@@ -3,10 +3,16 @@
     <div class="background-layer" [ngClass]="backgroundClass"></div>
 
     <div class="page-content">
+
+        @if (!isVideoOfferPage()) {
         <app-header></app-header>
+        }
 
         <div class="centered-content">
             <router-outlet />
+            @if (isVideoOfferPage()) {
+            <app-header style="position: fixed; width: 100vw;"></app-header>
+            }
         </div>
 
         <app-toast></app-toast>

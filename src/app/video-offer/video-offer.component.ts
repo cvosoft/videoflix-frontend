@@ -9,7 +9,7 @@ import { VideoPlayerComponent } from '../video-player/video-player.component';
 
 
 @Component({
-  imports: [CommonModule, VideoPlayerComponent],
+  imports: [CommonModule],
   standalone: true,
   selector: 'app-serien-übersicht',
   templateUrl: './video-offer.component.html',
@@ -39,12 +39,22 @@ export class VideoOfferComponent implements OnInit {
       this.predigten = data;
       //console.log(this.predigten[0])
       this.selectedPredigt = this.predigten[0];
+      console.log(this.selectedPredigt.thumbnail_file);
     });
 
   }
 
   onFolgeClick(predigt: Predigt): void {
+    // const slug = this.slugify(predigt.title);
+    // this.router.navigate(['/predigt', `${predigt.id}-${slug}`]);
+    this.selectedPredigt = predigt;
+  }
+
+  onPlayClick(predigt: Predigt | null): void {
+    if (!predigt) return;
     const slug = this.slugify(predigt.title);
     this.router.navigate(['/predigt', `${predigt.id}-${slug}`]);
   }
+
+
 }
