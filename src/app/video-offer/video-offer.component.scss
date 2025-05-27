@@ -7,9 +7,56 @@ section {
 
 
     .hero {
+        position: relative;
+
+        // ⬇️ Overlay zum Abdunkeln
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); // 50% transparentes Schwarz
+            z-index: 1;
+        }
+
         img {
             width: 100vw;
+            height: 70vh;
+            object-fit: cover;
+            object-position: left top; // ← wichtig!
         }
+
+        h3 {
+            font-size: 68px;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        span {
+            font-size: 16px;
+            font-weight: 400;
+            text-align: left
+        }
+
+        .innerHero {
+            z-index: 2; // Wichtig: Über dem Overlay
+            display: flex;
+            gap: 36px;
+            flex-direction: column;
+            align-items: flex-start;
+            //background-color: rgba(0, 0, 0, 0.6); // schwarz mit Transparenz
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            padding: 2rem;
+            color: white;
+            max-width: 50%;
+            border-radius: 0.5rem;
+        }
+
     }
 
 }
@@ -17,15 +64,12 @@ section {
 
 
 .series-list {
+    position: relative;
+    z-index: 50;
+    margin-top: -30px;
+    padding: 50px;
 
-    padding: 20px;
 
-    h4 {
-        font-size: 22px;
-        font-weight: 700;
-        color: white;
-        margin-bottom: 8px;
-    }
 
     .series-block {
 

@@ -2,12 +2,14 @@
 
     <div class="hero">
         <img [src]="selectedPredigt?.thumbnail_file">
-        <span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ut commodi cupiditate aliquid! Ratione
-            eveniet molestias unde alias totam esse architecto voluptates saepe minima? Itaque beatae officia animi ipsa
-            voluptas.
-        </span>
-        <button (click)="onPlayClick(selectedPredigt)">Play</button>
+        <div class="innerHero">
+            <h3>{{selectedPredigt?.title}}</h3>
+            <span>
+                {{selectedPredigt?.description}}
+            </span>
+            <button (click)="onPlayClick(selectedPredigt)">Play</button>
+        </div>
+
     </div>
 
 
@@ -15,7 +17,7 @@
 
         @for (serie of serien; track serie) {
 
-        <h4> {{ serie.title }}</h4>
+        <h3 class="h3"> {{ serie.title }}</h3>
 
         <div class="series-block">
 
