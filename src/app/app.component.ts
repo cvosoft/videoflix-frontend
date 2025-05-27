@@ -22,10 +22,13 @@ export class AppComponent {
     return this.router.url === '/videos';
   }
 
+  isPredigtDetailPage(): boolean {
+    return this.router.url.includes('predigt')
+  }
 
   shouldShowFooter(): boolean {
     const current = this.router.url;
-    return !current.includes('legalnotice') && !current.includes('imprint');
+    return !current.includes('legalnotice') && !current.includes('imprint') && !current.includes('predigt');
   }
 
   constructor(private router: Router) {

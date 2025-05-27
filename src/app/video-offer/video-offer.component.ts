@@ -48,6 +48,8 @@ export class VideoOfferComponent implements OnInit {
     // const slug = this.slugify(predigt.title);
     // this.router.navigate(['/predigt', `${predigt.id}-${slug}`]);
     this.selectedPredigt = predigt;
+    // Smooth an den Anfang der Seite scrollen
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   onPlayClick(predigt: Predigt | null): void {

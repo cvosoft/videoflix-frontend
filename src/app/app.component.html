@@ -4,13 +4,13 @@
 
     <div class="page-content">
 
-        @if (!isVideoOfferPage()) {
+        @if (!isVideoOfferPage() && !isPredigtDetailPage()) {
         <app-header></app-header>
         }
 
         <div class="centered-content">
             <router-outlet />
-            @if (isVideoOfferPage()) {
+            @if (isVideoOfferPage() || isPredigtDetailPage()) {
             <app-header style="position: fixed; width: 100vw;"></app-header>
             }
         </div>

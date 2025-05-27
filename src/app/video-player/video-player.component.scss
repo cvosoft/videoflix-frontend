@@ -1,11 +1,8 @@
 .video-wrapper {
-    position: relative;
-    //max-width: 1960px; // oder z. B. 720px
-    margin: 0 auto;
-    width: 100%;
-    aspect-ratio: 16 / 9; // sorgt für korrektes Seitenverhältnis
-    background: black;
-    height: 400px;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: black;
 }
 
 video {
