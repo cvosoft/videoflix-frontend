@@ -3,7 +3,7 @@
     <div class="preview" (click)="isPreviewPlaying = true">
 
         @if (selectedPredigt && isPreviewPlaying) {
-        <app-video-player [src]="selectedPredigt.video_file" [startAt]="60" [autoplay]="true" [muted]="true"
+        <app-video-player [src]="selectedPredigt.video_file" [startAt]="0" [autoplay]="true" [muted]="true"
             [loop]="true" [showControls]="false">
         </app-video-player>
         }
