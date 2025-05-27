@@ -43,6 +43,11 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
 
     const video = this.playerRef.nativeElement;
 
+    video.muted = this.muted;
+    video.autoplay = this.autoplay;
+    video.loop = this.loop;
+
+
 
     if (this.src.endsWith('.m3u8') && Hls.isSupported()) { // HLS
       this.hlsInstance = new Hls();
@@ -51,9 +56,12 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
 
       this.hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
         if (!this.hlsInstance) return;
+
+        video.muted = this.muted; // 👈 HIER
+
         this.plyrInstance = new Plyr(video);
 
-        //this.plyrInstance = new Plyr(video);
+
 
         if (this.startAt !== null && !isNaN(this.startAt)) {
           video.currentTime = this.startAt;
@@ -90,6 +98,7 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
       });
     } else { // non hls
       video.src = this.src;
+      video.muted = this.muted; // 👈 HIER
       this.plyrInstance = new Plyr(video);
 
       //this.plyrInstance = new Plyr(video);
