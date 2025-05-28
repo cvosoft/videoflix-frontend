@@ -7,6 +7,7 @@
 
      input {
          width: 408px;
+         //width: 100%;
          border: unset;
          height: 48px;
          padding: 12px 24px;
@@ -16,6 +17,10 @@
          color: #D3D3D3;
          font-size: 18px;
          font-weight: 400;
+
+         @media (max-width: 499px) {
+             width: 310px;
+         }
 
          &::placeholder {
              color: white;

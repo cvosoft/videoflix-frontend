@@ -9,6 +9,11 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 30px 96px;
+
+    @media (max-width: 499px) {
+        padding: 10px 16px;
+    }
+
 }
 
 

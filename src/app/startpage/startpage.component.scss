@@ -8,7 +8,8 @@ section {
 
 input {
     border: unset;
-    width: 518px;
+    max-width: 518px;
+    min-width: 358px;
     height: 48px;
     padding: 12px 24px;
     border: 1px solid white;
@@ -28,5 +29,7 @@ input {
 .flex-row {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 16px;
+    justify-content: center;
 }

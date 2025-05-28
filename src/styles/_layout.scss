@@ -51,5 +51,9 @@ section {
     gap: 32px;
     border-radius: 48px;
 
+    @media (max-width: 499px) {
+        width: 358px;
+    }
+
 
 }
