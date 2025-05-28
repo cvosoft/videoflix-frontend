@@ -56,7 +56,7 @@ export class VideoOfferComponent implements OnInit {
       this.showHeroOnMobile = true;
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    console.log(this.isMobile, this.showHeroOnMobile);
+    //console.log(this.isMobile, this.showHeroOnMobile);
 
   }
 
