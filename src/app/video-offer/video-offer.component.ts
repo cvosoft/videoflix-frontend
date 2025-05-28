@@ -21,6 +21,13 @@ export class VideoOfferComponent implements OnInit {
   isPreviewPlaying = true;
   selectedPredigt: Predigt | null = null;
 
+  isMobile: boolean = window.innerWidth < 500;
+  showHeroOnMobile: boolean = false;
+
+  onResize() {
+    this.isMobile = window.innerWidth < 500;
+  }
+
   constructor(private PredigtService: PredigtService, private serieService: SerieService, private router: Router) { }
 
   slugify(title: string): string {
@@ -31,25 +38,26 @@ export class VideoOfferComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.onResize();
+    window.addEventListener('resize', this.onResize.bind(this));
     this.serieService.getSerien().subscribe((data) => {
       this.serien = data;
-      //console.log(this.serien)
     });
     this.PredigtService.getPredigten().subscribe((data) => {
       this.predigten = data;
-      //console.log(this.predigten[0])
       this.selectedPredigt = this.predigten[0];
-      console.log(this.selectedPredigt.thumbnail_file);
     });
 
   }
 
   onFolgeClick(predigt: Predigt): void {
-    // const slug = this.slugify(predigt.title);
-    // this.router.navigate(['/predigt', `${predigt.id}-${slug}`]);
     this.selectedPredigt = predigt;
-    // Smooth an den Anfang der Seite scrollen
+    if (this.isMobile) {
+      this.showHeroOnMobile = true;
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    console.log(this.isMobile, this.showHeroOnMobile);
+    
   }
 
   onPlayClick(predigt: Predigt | null): void {

@@ -1,5 +1,6 @@
 <section>
 
+    @if (!isMobile || (isMobile && showHeroOnMobile)) {
     <div class="hero">
         <img [src]="selectedPredigt?.thumbnail_file">
         <div class="innerHero">
@@ -9,10 +10,10 @@
             </span>
             <button (click)="onPlayClick(selectedPredigt)">Play</button>
         </div>
-
     </div>
+    }
 
-
+    @if (!isMobile || (isMobile && !showHeroOnMobile)) {
     <div class="series-list">
 
         @for (serie of serien; track serie) {
@@ -33,4 +34,5 @@
         }
 
     </div>
+    }
 </section>
