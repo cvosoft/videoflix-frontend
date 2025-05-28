@@ -1,9 +1,23 @@
 <section>
 
-    @if (!isMobile || (isMobile && showHeroOnMobile)) {
+    @if (!isMobile) {
     <div class="hero">
         <img [src]="selectedPredigt?.thumbnail_file">
         <div class="innerHero">
+            <h3>{{selectedPredigt?.title}}</h3>
+            <span>
+                {{selectedPredigt?.description}}
+            </span>
+            <div style="display: flex; gap: 10px">
+                <button (click)="onPlayClick(selectedPredigt)">Play</button>
+                @if (isMobile){<button (click)="onBackClick()">Back</button>}
+            </div>
+        </div>
+    </div>
+    } @else if (isMobile && showHeroOnMobile){
+    <div style="display: flex; flex-direction: column; gap: 15px">
+        <img [src]="selectedPredigt?.thumbnail_file">
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px">
             <h3>{{selectedPredigt?.title}}</h3>
             <span>
                 {{selectedPredigt?.description}}
