@@ -57,13 +57,17 @@ export class VideoOfferComponent implements OnInit {
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
     console.log(this.isMobile, this.showHeroOnMobile);
-    
+
   }
 
   onPlayClick(predigt: Predigt | null): void {
     if (!predigt) return;
     const slug = this.slugify(predigt.title);
     this.router.navigate(['/predigt', `${predigt.id}-${slug}`]);
+  }
+
+  onBackClick() {
+    this.showHeroOnMobile = false;
   }
 
 

@@ -8,7 +8,10 @@
             <span>
                 {{selectedPredigt?.description}}
             </span>
-            <button (click)="onPlayClick(selectedPredigt)">Play</button>
+            <div style="display: flex; gap: 10px">
+                <button (click)="onPlayClick(selectedPredigt)">Play</button>
+                @if (isMobile){<button (click)="onBackClick()">Back</button>}
+            </div>
         </div>
     </div>
     }
