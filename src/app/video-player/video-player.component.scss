@@ -21,7 +21,7 @@ video {
     padding: 5px 10px;
     border-radius: 6px;
     font-size: 0.9rem;
-    z-index: 10;
+    z-index: 1000000;
 }
 
 .quality-selector {
@@ -33,5 +33,5 @@ video {
     padding: 4px 8px;
     border-radius: 6px;
     font-size: 0.9rem;
-    z-index: 10;
+    z-index: 10000000;
 }
